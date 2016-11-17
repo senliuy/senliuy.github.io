@@ -170,6 +170,7 @@ public:
                                                                                         <li><i class="glyphicon glyphicon-time"></i> November 17, 2016</li>
                                                                                         <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
                                                                                         <li><i class="glyphicon glyphicon-tag"></i> Leetcode, Algorithm, Greedy</li>
+                                                                                        <li><i class="glyphicon glyphicon-eye-open"></i><script> document.write("访问数: " + localStorage.pagecount);</script></li>
                                                                                     </ul>
                                                                                 </div>
                                                                                 <div class="clear"></div>      
@@ -207,6 +208,15 @@ public:
         <script type="text/javascript" src="../js/gmaps.min.js"></script>
         <script type="text/javascript" src="../js/main.js"></script>
 		<script src="js/Chart.js"></script>
+        <script type="text/javascript">
+			if (localStorage.pagecount)
+			{
+				localStorage.pagecount=Number(localStorage.pagecount) +1;
+			}else{
+				localStorage.pagecount=1;
+			}
+			
+		</script>
         <script type="text/javascript">
             var mouseX;
             var mouseY;

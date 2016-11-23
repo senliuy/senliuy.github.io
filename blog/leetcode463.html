@@ -119,40 +119,42 @@
                                                                     <div class="col-md-12" style="width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: left;background: rgba(255, 255, 255, 0.8);padding-bottom: 15px;padding-top: 15px;">
                                                                         <article class="postPage">
                                                                             <div class="title_content">
-                                                                                <div class="text_content">Leetcode 455. Assign Cookies</div>
+                                                                                <div class="text_content">Leetcode 463. Island Perimeter</div>
                                                                                 <div class="clear"></div>
                                                                             </div>
                                                                             <h2> Question: </h2>
-                                                                            <p>Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size sj. If sj >= gi, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.</p>
+                                                                            <p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn't have "lakes" (water inside that isn't connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.</p>
                                                                             <label>Note:</label>
                                                                             <p>You may assume the greed factor is always positive. </p>
                                                                             <p>You cannot assign more than one cookie to one child. </p>
                                                                             
                                                                             <h6>Example 1:</h6>
-                                                                            Input:<p> [1,2,3], [1,1] </p>
-                                                                            Output:<p> 1 </p>
-                                                                            Explanation:<p> You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content. You need to output 1.</p>
+                                                                            Input:<p> [[0,1,0,0], [1,1,1,0], [0,1,0,0], [1,1,0,0]] </p>
+                                                                            Output:<p> 16 </p>
+                                                                            Explanation:<p> The perimeter is the 16 yellow stripes in the image below: </p>
+                                                                            <img src="images/islandPerimeter.jpg" />
 
-																			<h6>Example 2:</h6>
-                                                                            Input:<p> [1,2], [1,2,3] </p>
-                                                                            Output:<p> 2 </p>
-                                                                            Explanation:<p> You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. You have 3 cookies and their sizes are big enough to gratify all of the children, You need to output 2.</p>
+																			
                                                                             
                                                                             <h2> Solution: </h2>
-                                                                            <p>Sort two vectors with O(nlgn) complexity, using Greedy strategy travering twoo arrays, if the current candy can't satisfy the current children, finding whether the next candy is satisfy or not. <p>
+                                                                            <p> Traverse the matrix, find all elements with value equals to 1. And count the number of neghibors which equals to 0 or is the boundary of the maxtrix. Summing all the selected elements and return the result. <p>
                                                                             <h2> Code: </h2>
 <pre class="prettyprint" id="Cpp">
 class Solution {
 public:
-    int findContentChildren(vector<int>& g, vector<int>& s) {
-        sort(g.begin(), g.end());
-        sort(s.begin(), s.end());
+    int islandPerimeter(vector<vector<int>>& grid) {
         int res = 0;
-        int i = 0;
-        int j = 0;
-        while(i < g.size() && j < s.size()){
-            if(g[i] <= s[j]){res++;i++;j++;}
-            else j++;
+        for(int i=0; i < grid.size();i++){
+            for(int j=0; j < grid[i].size(); j++){
+                if(grid[i][j] == 1){
+                    int temp_b = 4;
+                    if(i>0 && grid[i-1][j] == 1) temp_b--;
+                    if(j>0 && grid[i][j-1] == 1) temp_b--;
+                    if(i < grid.size()-1 && grid[i+1][j] == 1) temp_b--;
+                    if(j < grid[1].size()-1 && grid[i][j+1] == 1) temp_b--;
+                    res += temp_b;
+                }
+            }
         }
         return res;
     }
@@ -164,11 +166,11 @@ public:
                                                                                     <div>
                                                                                         <span class="tag">#Leetcode</span>
                                                                                         <span class="tag">#Algorithm</span>
-                                                                                        <span class="tag">#Greedy</span>
                                                                                     </div>
                                                                                     <ul class="info-post">
-                                                                                        <li><i class="glyphicon glyphicon-time"></i> November 17, 2016</li>
+                                                                                        <li><i class="glyphicon glyphicon-time"></i> November 23, 2016</li>
                                                                                         <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
+                                                                                        <li><i class="glyphicon glyphicon-tag"></i> Leetcode, Algorithm</li>
                                                                                     </ul>
                                                                                 </div>
                                                                                 <div class="clear"></div>      

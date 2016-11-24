@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title>KMP</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta name="description" content="FlexyCodes - FlexyCard vCard Template. Creating my personal page!"/>
+        <link  rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/colors/DarkBlue.css" id="colors-style" />
+        <link rel="stylesheet" type="text/css" href="../css/switcher.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
+        <link rel="stylesheet" type="text/css" href="../css/prettyPhoto.css"/> 
+        
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer></script>
+        <style>
+            @media only screen and (max-width : 991px){
+                .resp-vtabs .resp-tabs-container {
+                    margin-left: 13px;
+                }
+            }
+			@media only screen and (min-width : 800px) and (max-width : 991px){
+                .resp-vtabs .resp-tabs-container {
+                    margin-left: 13px;
+					width:89%;
+                }
+            }		
+        </style>
+    </head>
+    <body>
+        <!-- Laoding page -->
+        <div id="preloader"><div id="spinner"></div></div>
+        <!-- .slideshow -->
+        <ul class="cb-slideshow" id="cb_slideshow" style="display:none">
+            <li><span>Image 01</span><div></div></li>
+        </ul> 
+        <!-- /.slideshow --> 
+        <!-- .wrapper --> 
+        <div class="wrapper">
+            <!--- .Content --> 
+            <section class="tab-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">   
+                                <div class="col-md-3 widget-profil">
+                                    <div class="row">
+                                        <!-- Profile Image -->
+                                        <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
+                                             <div class="image-holder one" id="pic_prof_1" style="display:block">
+                                                    <img class="head-image up circle" src="../images/img/up.png" width="150" height="150" alt="" />
+                                                    <img class="head-image up-left circle" src="../images/img/upleft.png" width="150" height="150" alt="" />
+                                                    <img class="head-image left circle" src="../images/img/left.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down-left circle" src="../images/img/downleft.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down circle" src="../images/img/down.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down-right circle" src="../images/img/downright.png" width="150" height="150" alt="" />
+                                                    <img class="head-image right circle" src="../images/img/right.png" width="150" height="150" alt="" />
+                                                    <img class="head-image up-right circle" src="../images/img/upright.png" width="150" height="150" alt="" />
+                                                    <img class="head-image front circle" src="../images/img/front.png" width="150" height="150" alt="" />
+                                            </div>       
+                                            <!-- style for simple image profile -->		
+                                            <div class="circle-img" id="pic_prof_2" style="display:none"></div>
+                                        </div>
+                                        <!-- End Profile Image -->
+                                        <div class="col-lg-12 col-md-12 col-sm-9 col-xs-12">
+                                            <!-- Profile info -->
+                                            <div id="profile_info">
+                                                <h1 id="name" class="transition-02">Liu Yan</h1>
+                                                <h4 class="line">Algorithm Engineer</h4>
+                                                <h6><span class="fa fa-map-marker"></span> China Macau</h6>
+                                            </div>
+                                            <!-- End Profile info -->  
+                                            <!-- Profile Description -->
+                                            <div id="profile_desc">
+                                                <p>2009-2013, ChongQing University, Bachelor</p>
+                                                <p>2014-now, University of Macau, Master</p>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <!-- End Profile Description -->  
+                                            <!-- Name -->
+                                             <div id="profile_social">
+                                                <h6>My Social Profiles</h6>
+                                                <a href="http://weibo.com/bigteacherbrother"><i class="fa fa-weibo"></i></a>
+                                                <a href="https://www.facebook.com/liu.yan.507"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://twitter.com/senliuy"><i class="fa fa-twitter"></i></a>
+                                                <a href="https://github.com/senliuy"><i class="fa fa-github"></i></a>
+                                                <a href="https://www.shanbay.com/bdc/review/progress/1871728"><i class="fa fa-star"></i></a>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <!-- End Name -->  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 flexy_content" style="padding-left: 0;padding-right: 0;">
+                                    <!-- verticalTab menu -->
+                                    <div id="verticalTab">
+                                        <ul class="resp-tabs-list">
+                                            <a href="../index.html" id="downlowd" ><i class="fa fa-profile profile a fa-user icon_menu hi-icon-effect-5 hi-icon-effect-5a"></i> </a>
+                                            <li class="tabs-blog hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="blog">
+                                                <span class="tite-list">blog</span>
+                                                <i class="fa fa-book icon_menu"></i>
+                                            </li>
+                                            <a href="../File/刘岩-简历.pdf" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
+                                        </ul>
+                                        <!-- /resp-tabs-list -->
+                                        <!-- resp-tabs-container --> 
+                                        <div class="resp-tabs-container">
+                                            <!-- profile -->
+
+                                            <!-- .blog -->
+                                            <div id="blog" class="content_2">
+                                                <h1 class="h-bloc">Blog</h1><br> 
+                                                <section id="post-1-page" class="content-post">
+                                                                <div class="row inner">
+                                                                    <div class="col-md-12" style="width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: left;background: rgba(255, 255, 255, 0.8);padding-bottom: 15px;padding-top: 15px;">
+                                                                        <article class="postPage">
+                                                                            <div class="title_content">
+                                                                                <div class="text_content">KMP</div>
+                                                                                <div class="clear"></div>
+                                                                            </div>
+                                                                            <p>对于判断一个字符串（B="ababacb"）是否是另一个字符串（A="ababababacb"）的子串的问题，一个最容易想到的便是暴力求解（逐个字符比较）：</p>
+                                                                            <p>①从第一个字符（i=0）开始比较</p>
+                                                                            <img src="images/KMP1.jpg" width="160"/>
+                                                                            <p>②如果不是的话则将B和第二个字符比较（i=1）</p>
+                                                                            <img src="images/KMP2.jpg" width="160"/>
+                                                                            <p>如此循环判断完整个字符串，时间复杂度是O(m*n)。很明显，我们做了m次对B的重复遍历，如果我们能出去遍历B的冗余操作，便可以大大提高运行速度。</p>
+                                                                            <p>我们怎样不对B进行遍历而就能判断这次对比是否合适呢。举个例子，用两个变量i和k分别遍历A和B，某一时刻条件如下图</p>
+                                                                            <img src="images/KMP3.jpg" width="160"/>
+                                                                            <p>经过两轮的暴力求解法后，我们会到达下面这种状态：</p>
+                                                                            <img src="images/KMP4.jpg" width="160"/>
+                                                                            <p>观察蓝色的的部分，我们之所以省去B的遍历，是因为在B[2,3,4]这部分内容和B'[0,1,2]是重复的。也就是子串B[0,...,k-1]的前缀和后缀的最长公共子序列的长度。这个长度便是《算法导论》这本书所说的前缀函数（π={π[0],...,π[m]},m是数组B的长度）的定义。</p>
+                                                                            <p>显然π之和B自己有关，那么如何确定π的值呢？以k=3为例（当然，此时π[0]=0,π[1]=0,π[2]=1,π[3]=2已经知道了）: </p>
+                                                                            <img src="images/KMP5.jpg" width="160"/>
+                                                                            <p>下一步，B[k+1] = B[k'+1], 所以最长公共子串的长度+1即可，即π[4]=3。但是当k=5时，B[5]≠B[3], 如下图，k'的新值应该赋为π[k'-1], 如此循环直到结束。得到B的前缀函数(π(B) = [0,0,1,2,3,0,0])。</p>
+                                                                            <img src="images/KMP6.jpg" width="160"/>
+                                                                            <p>接着我们回到A的遍历中，和求B得前缀函数类似。如果A[i]=B[k], 则 k=k+1; 如果 A[i]≠B[k]且k>0，k=π[k-1]，再对比A[i]和B[k]。如果遇到B是A中一个子字符串，但还没有遍历完，保存结果后注意要从k=π[k-1]开始下一次遍历（例如A=“ababa”,B="aba",显然子串的情况出现了两次）</p>
+                                                                            <p>代码总结一下上面的算法，真的很简单：</p>
+                                                                            <h2> Code </h2>
+<pre class="prettyprint" id="Cpp">
+vector < int > nextV(string b){
+    int len = (int)b.size();
+    vector < int > res(len,0);
+    int k=0;
+    for (int i=1; i < len; i++){
+        while ( k>0 && b[i] != b[k] ) k = res[k-1];
+        if(b[k] == b[i]) res[i] = ++k;
+    }
+    
+    return res;
+}
+vector < int > KMP(string a, string b){
+    int len_a = (int)a.size();
+    int len_b = (int)b.size();
+    vector< int > res;
+    vector< int > next = nextV(b);
+    int k = 0;
+    for (int i=0; i < len_a; i++) {
+        while(k>0 && a[i] != b[k]) k = next[k-1];
+        if(b[k] == a[i]) k++;
+        if(k == len_b){
+            res.push_back(i-len_b+1);
+            k = next[k-1];
+        }
+    }
+    return res;
+}
+</pre>
+                                                
+                                                                            <div class="col-md-12 first">
+                                                                                <div class="info">
+                                                                                    <div>
+                                                                                        <span class="tag">#KMP</span>
+                                                                                        <span class="tag">#Algorithm</span>
+                                                                                        <span class="tag">#Substring</span>
+                                                                                    </div>
+                                                                                    <ul class="info-post">
+                                                                                        <li><i class="glyphicon glyphicon-time"></i> November 24, 2016</li>
+                                                                                        <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="clear"></div>      
+                                                                        	</div>
+                                                                        </article>
+                                                                    </div>
+                                                                    <div class="clear"></div>
+                                                                </div>
+                                                            </section>
+
+                                            </div>
+                                            <!-- End .blog -->
+                                        </div>
+                                        <!-- End #resp-tabs-container --> 
+                                    </div><!-- End verticalTab -->
+                                </div><!-- End flexy_content -->
+                            </div><!-- End row -->
+                        </div><!-- End col-md-12 -->
+                    </div><!-- End row -->
+                </div><!-- End container -->
+            </section>
+            <!-- End Content -->
+        </div>
+        <!-- End wrapper -->
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="../js/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.mixitup.min.js"></script> 
+        <script type="text/javascript" src="../js/HeadImage.js"></script>
+        <script type="text/javascript" src="../js/easyResponsiveTabs.min.js"></script> 
+        <script type="text/javascript" src="../js/jsSwitcher/jquery.cookie.js"></script>	
+        <script type="text/javascript" src="../js/jsSwitcher/switcher.js"></script>	
+        <script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>		
+        <script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
+        <script type="text/javascript" src="../js/gmaps.min.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
+		<script src="js/Chart.js"></script>
+        <script type="text/javascript">
+			if (localStorage.pagecount)
+			{
+				localStorage.pagecount=Number(localStorage.pagecount) +1;
+			}else{
+				localStorage.pagecount=1;
+			}
+			
+		</script>
+        <script type="text/javascript">
+            var mouseX;
+            var mouseY;
+            var imageOne;
+            /* Calling the initialization function */
+            $(init);
+            /* The images need to re-initialize on load and on resize, or else the areas
+             * where each image is displayed will be wrong. */
+            $(window).load(init);
+            $(window).resize(init);
+            /* Setting the mousemove event caller */
+            $(window).mousemove(getMousePosition);
+            /* This function is called on document ready, on load and on resize
+             * and initiallizes all the images */
+            function init() {
+                /* Instanciate the mouse position variables */
+                mouseX = 0;
+                mouseY = 0;
+                /* Instanciate a HeadImage class for every image */
+                imageOne = new HeadImage("one");
+            }
+            /* This function is called on mouse move and gets the mouse position. 
+             * It also calls the HeadImage function to display the correct image*/
+            function getMousePosition(event) {
+                /* Setting the mouse position variables */
+                mouseX = event.pageX;
+                mouseY = event.pageY;
+                /*Calling the setImageDirection function of the HeadImage class
+                 * to display the correct image*/
+                imageOne.setImageDirection();
+            }
+        </script>
+    </body>
+</html>

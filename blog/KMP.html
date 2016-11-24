@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="../css/main.css" />
         <link rel="stylesheet" type="text/css" href="../css/prettyPhoto.css"/> 
         
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon/favicon.ico">
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer></script>
         <style>
             @media only screen and (max-width : 991px){
@@ -127,13 +127,13 @@
                                                                             <img src="images/KMP1.jpg" width="160"/>
                                                                             <p>②如果不是的话则将B和第二个字符比较（i=1）</p>
                                                                             <img src="images/KMP2.jpg" width="160"/>
-                                                                            <p>如此循环判断完整个字符串，时间复杂度是O(m*n)。很明显，我们做了m次对B的重复遍历，如果我们能出去遍历B的冗余操作，便可以大大提高运行速度。</p>
+                                                                            <p>如此循环判断完整个字符串，时间复杂度是O(m*n)。很明显，我们做了m次对B的重复遍历，如果我们能除去遍历B的冗余操作，便可以大大提高运行速度。</p>
                                                                             <p>我们怎样不对B进行遍历而就能判断这次对比是否合适呢。举个例子，用两个变量i和k分别遍历A和B，某一时刻条件如下图</p>
                                                                             <img src="images/KMP3.jpg" width="160"/>
                                                                             <p>经过两轮的暴力求解法后，我们会到达下面这种状态：</p>
                                                                             <img src="images/KMP4.jpg" width="160"/>
-                                                                            <p>观察蓝色的的部分，我们之所以省去B的遍历，是因为在B[2,3,4]这部分内容和B'[0,1,2]是重复的。也就是子串B[0,...,k-1]的前缀和后缀的最长公共子序列的长度。这个长度便是《算法导论》这本书所说的前缀函数（π={π[0],...,π[m]},m是数组B的长度）的定义。</p>
-                                                                            <p>显然π之和B自己有关，那么如何确定π的值呢？以k=3为例（当然，此时π[0]=0,π[1]=0,π[2]=1,π[3]=2已经知道了）: </p>
+                                                                            <p>观察蓝色的的部分，我们之所以可以省去B的遍历，是因为在B[2,3,4]这部分内容和B'[0,1,2]是重复的。也就是子串B[0,...,k-1]的前缀和后缀的最长公共子序列的长度。这个长度便是《算法导论》这本书所说的前缀函数（π={π[0],...,π[m]},m是数组B的长度）的定义。</p>
+                                                                            <p>显然π只和B自己有关，那么如何确定π的值呢？以k=3为例（当然，此时π[0]=0,π[1]=0,π[2]=1,π[3]=2已经知道了）: </p>
                                                                             <img src="images/KMP5.jpg" width="160"/>
                                                                             <p>下一步，B[k+1] = B[k'+1], 所以最长公共子串的长度+1即可，即π[4]=3。但是当k=5时，B[5]≠B[3], 如下图，k'的新值应该赋为π[k'-1], 如此循环直到结束。得到B的前缀函数(π(B) = [0,0,1,2,3,0,0])。</p>
                                                                             <img src="images/KMP6.jpg" width="160"/>

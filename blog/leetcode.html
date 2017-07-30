@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title>KMP</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta name="description" content="FlexyCodes - FlexyCard vCard Template. Creating my personal page!"/>
+        <link  rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/animate.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" type="text/css" href="../css/colors/DarkBlue.css" id="colors-style" />
+        <link rel="stylesheet" type="text/css" href="../css/switcher.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
+        <link rel="stylesheet" type="text/css" href="../css/prettyPhoto.css"/> 
+        
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=desert&amp;lang=css" defer></script>
+        <style>
+            @media only screen and (max-width : 991px){
+                .resp-vtabs .resp-tabs-container {
+                    margin-left: 13px;
+                }
+            }
+			@media only screen and (min-width : 800px) and (max-width : 991px){
+                .resp-vtabs .resp-tabs-container {
+                    margin-left: 13px;
+					width:89%;
+                }
+            }		
+        </style>
+    </head>
+    <body>
+        <!-- Laoding page -->
+        <div id="preloader"><div id="spinner"></div></div>
+        <!-- .slideshow -->
+        <ul class="cb-slideshow" id="cb_slideshow" style="display:none">
+            <li><span>Image 01</span><div></div></li>
+        </ul> 
+        <!-- /.slideshow --> 
+        <!-- .wrapper --> 
+        <div class="wrapper">
+            <!--- .Content --> 
+            <section class="tab-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">   
+                                <div class="col-md-3 widget-profil">
+                                    <div class="row">
+                                        <!-- Profile Image -->
+                                        <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
+                                             <div class="image-holder one" id="pic_prof_1" style="display:block">
+                                                    <img class="head-image up circle" src="../images/img/up.png" width="150" height="150" alt="" />
+                                                    <img class="head-image up-left circle" src="../images/img/upleft.png" width="150" height="150" alt="" />
+                                                    <img class="head-image left circle" src="../images/img/left.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down-left circle" src="../images/img/downleft.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down circle" src="../images/img/down.png" width="150" height="150" alt="" />
+                                                    <img class="head-image down-right circle" src="../images/img/downright.png" width="150" height="150" alt="" />
+                                                    <img class="head-image right circle" src="../images/img/right.png" width="150" height="150" alt="" />
+                                                    <img class="head-image up-right circle" src="../images/img/upright.png" width="150" height="150" alt="" />
+                                                    <img class="head-image front circle" src="../images/img/front.png" width="150" height="150" alt="" />
+                                            </div>       
+                                            <!-- style for simple image profile -->		
+                                            <div class="circle-img" id="pic_prof_2" style="display:none"></div>
+                                        </div>
+                                        <!-- End Profile Image -->
+                                        <div class="col-lg-12 col-md-12 col-sm-9 col-xs-12">
+                                            <div id="profile_info">
+                                                <h1 id="name" class="transition-02">Related Blogs</h1>
+                                                <div id="relate_blog">
+                                                    <a href="leetcode459.html"><p>Leetcode 459: Repeated Substring Pattern</p></a>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 flexy_content" style="padding-left: 0;padding-right: 0;">
+                                    <!-- verticalTab menu -->
+                                    <div id="verticalTab">
+                                        <ul class="resp-tabs-list">
+                                            <a href="../index.html" id="downlowd" ><i class="fa fa-profile profile a fa-user icon_menu hi-icon-effect-5 hi-icon-effect-5a"></i> </a>
+                                            <li class="tabs-blog hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="blog">
+                                                <span class="tite-list">blog</span>
+                                                <i class="fa fa-book icon_menu"></i>
+                                            </li>
+                                            <a href="../File/刘岩-简历.pdf" id="downlowd"><i class="fa fa-download icon_print"></i> </a>
+                                        </ul>
+                                        <!-- /resp-tabs-list -->
+                                        <!-- resp-tabs-container --> 
+                                        <div class="resp-tabs-container">
+                                            <!-- profile -->
+
+                                            <!-- .blog -->
+                                            <div id="blog" class="content_2">
+                                                <h1 class="h-bloc">Blog - My Blog</h1><br> 
+
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <!-- Page Blog -->
+                                                        <div class="col-md-12" id="blog_page">
+                                                            <!-- start Page Blog -->
+                                                            <section id="blog-page">
+                                                                <!-- Post 1 --> 
+                                                                <article id="post-2" class="blog-article">                    
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 post_content">
+                                                                                <div class="content post_format_standart">
+                                                                                    <div class="top_c ">
+                                                
+                                                                                        <div class="title_content">
+                                                                                            <div class="text_content">Leetcode 455. Assign Cookies</div>
+                                                                                            <div class="clear"></div>
+                                                                                        </div>
+                                                
+                                                                                        <ul class="info">
+                                                                                             <li><i class="glyphicon glyphicon-time"></i> November 17, 2016</li>
+                                                                                        <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
+                                                                                        <li><i class="glyphicon glyphicon-tag"></i> Leetcode, Algorithm, Greedy</li>
+                                                                                        </ul>
+                                                
+                                                                                        <div class="blog-content">
+                                                                                            <p><i class="fa fa-quote-left"></i> 
+                                                                                            Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size sj. If s[j] >= g[i], we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.</p></div>
+                                                                                    </div>
+                                                                                </div>  
+                                                                                <!--a href="#post-1" class="read_m pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a-->
+                                                                                <a href="bleetcode455.html" class="pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </article>
+                                                                <!-- End Post 1 -->
+                                                                
+                                                                <!-- Post 2 --> 
+                                                                <article id="post-2" class="blog-article">                    
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 post_content">
+                                                                                <div class="content post_format_standart">
+                                                                                    <div class="top_c ">
+                                                
+                                                                                        <div class="title_content">
+                                                                                            <div class="text_content"> Leetcode 463. Island Perimeter</div>
+                                                                                            <div class="clear"></div>
+                                                                                        </div>
+                                                
+                                                                                        <ul class="info">
+                                                                                             <li><i class="glyphicon glyphicon-time"></i> November 23, 2016</li>
+                                                                                        <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
+                                                                                        </ul>
+                                                
+                                                                                        <div class="blog-content">
+                                                                                            <p><i class="fa fa-quote-left"></i> 
+                                                                                            You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn't have "lakes" (water inside that isn't connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>  
+                                                                                <!--a href="#post-1" class="read_m pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a-->
+                                                                                <a href="leetcode463.html" class="pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </article>
+                                                                <!-- End Post 2 -->
+                                                                 <!-- Post 4 -->    
+                                                                <article id="post-2" class="blog-article">                    
+                                                                    <div class="col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 post_content">
+                                                                                <div class="content post_format_standart">
+                                                                                    <div class="top_c ">
+                                                
+                                                                                        <div class="title_content">
+                                                                                            <div class="text_content"> Leetcode 459</div>
+                                                                                            <div class="clear"></div>
+                                                                                        </div>
+                                                
+                                                                                        <ul class="info">
+                                                                                             <li><i class="glyphicon glyphicon-time"></i> November 24, 2016</li>
+                                                                                        <li><i class="glyphicon glyphicon-user"></i> by Yan Liu</li>
+                                                                                        </ul>
+                                                
+                                                                                        <div class="blog-content">
+                                                                                            <p><i class="fa fa-quote-left"></i> 
+                                                                                            Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. You may assume the given string consists of lowercase English letters only and its length will not exceed 10000.</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>  
+                                                                                <!--a href="#post-1" class="read_m pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a-->
+                                                                                <a href="leetcode459.html" class="pull-right">Read More <i class='glyphicon glyphicon-chevron-right'></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </article>
+                                                                <!-- End Post 4 -->
+                                                
+                                                                <div class="clear"></div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End .blog -->
+                                            <!-- End .blog -->
+                                        </div>
+                                        <!-- End #resp-tabs-container --> 
+                                    </div><!-- End verticalTab -->
+                                </div><!-- End flexy_content -->
+                            </div><!-- End row -->
+                        </div><!-- End col-md-12 -->
+                    </div><!-- End row -->
+                </div><!-- End container -->
+            </section>
+            <!-- End Content -->
+        </div>
+        <!-- End wrapper -->
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="../js/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.mixitup.min.js"></script> 
+        <script type="text/javascript" src="../js/HeadImage.js"></script>
+        <script type="text/javascript" src="../js/easyResponsiveTabs.min.js"></script> 
+        <script type="text/javascript" src="../js/jsSwitcher/jquery.cookie.js"></script>	
+        <script type="text/javascript" src="../js/jsSwitcher/switcher.js"></script>	
+        <script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>		
+        <script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
+        <script type="text/javascript" src="../js/gmaps.min.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
+		<script src="js/Chart.js"></script>
+        <script type="text/javascript">
+			if (localStorage.pagecount)
+			{
+				localStorage.pagecount=Number(localStorage.pagecount) +1;
+			}else{
+				localStorage.pagecount=1;
+			}
+			
+		</script>
+        <script type="text/javascript">
+            var mouseX;
+            var mouseY;
+            var imageOne;
+            /* Calling the initialization function */
+            $(init);
+            /* The images need to re-initialize on load and on resize, or else the areas
+             * where each image is displayed will be wrong. */
+            $(window).load(init);
+            $(window).resize(init);
+            /* Setting the mousemove event caller */
+            $(window).mousemove(getMousePosition);
+            /* This function is called on document ready, on load and on resize
+             * and initiallizes all the images */
+            function init() {
+                /* Instanciate the mouse position variables */
+                mouseX = 0;
+                mouseY = 0;
+                /* Instanciate a HeadImage class for every image */
+                imageOne = new HeadImage("one");
+            }
+            /* This function is called on mouse move and gets the mouse position. 
+             * It also calls the HeadImage function to display the correct image*/
+            function getMousePosition(event) {
+                /* Setting the mouse position variables */
+                mouseX = event.pageX;
+                mouseY = event.pageY;
+                /*Calling the setImageDirection function of the HeadImage class
+                 * to display the correct image*/
+                imageOne.setImageDirection();
+            }
+        </script>
+    </body>
+</html>
